@@ -52,10 +52,6 @@ func main() {
     for i:=0; i<len; i++{
         if buf[i] == 0xff { 
             if i+1 >= len {
-                if fout != nil {
-                    fout.Close()
-                    fout = nil
-                }
                 break
             }
             
@@ -89,6 +85,9 @@ func main() {
     
   }
   
-  
+  if fout != nil {
+    fout.Close()
+    fout = nil
+    }
   
 }
